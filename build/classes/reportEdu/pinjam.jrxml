@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c2538882-0070-4ef3-92fd-956a7b788844">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[select*from pinjam]]>
+	</queryString>
+	<field name="no" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="no_buku" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="id_user" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nama" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="buku" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="jmlhBuku" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tglPinjam" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tglKmbl" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="totalHari" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="132" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="100" width="555" height="32" forecolor="#000000" backcolor="#00CCCC" uuid="8e1b65ca-787b-426e-a4ea-70da9f6a533b"/>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement x="411" y="0" width="144" height="32" forecolor="#FFFFFF" uuid="3f14ab1b-2d4b-4b99-b54b-3c350fdc3299"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Segoe UI" size="13"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+			<image>
+				<reportElement x="0" y="5" width="157" height="95" uuid="ad1af87b-57ad-4d80-a6ae-6566061abf1d"/>
+				<imageExpression><![CDATA["C:\\Users\\USER\\Pictures\\Photoshop\\Project Edu apps\\Logo.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="157" y="10" width="209" height="42" forecolor="#00CCCC" uuid="54be476f-e5a2-4dbb-b2ac-f28604c1a6f5"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Segoe UI" size="26" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LAPORAN DATA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="286" y="52" width="269" height="42" forecolor="#00CCCC" uuid="b572bf2c-baf5-4331-96dd-12a34e98b415"/>
+				<textElement>
+					<font fontName="Segoe UI" size="26" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PEMINJAMAN BUKU]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="26" splitType="Stretch">
+			<staticText>
+				<reportElement style="Column header" x="0" y="7" width="45" height="18" forecolor="#000000" uuid="6989a00b-7ac4-487e-b642-85e5b40d18ec"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Segoe UI" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" mode="Transparent" x="45" y="7" width="51" height="18" forecolor="#000000" uuid="27cc287a-982d-44e8-a16d-0d1d0e7e94a6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Segoe UI" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NoBuku]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="96" y="7" width="51" height="18" forecolor="#000000" uuid="d74cb16b-3582-4de9-a409-8eb2a656368f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Segoe UI" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[IdUser]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="147" y="7" width="97" height="18" forecolor="#000000" uuid="ce64f5e1-0fdf-42be-bb21-4f874ddead7e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Segoe UI" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nama]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="244" y="7" width="61" height="18" forecolor="#000000" uuid="b1570bac-9d90-4d16-8eaa-3b8290682743"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Segoe UI" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Buku]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="305" y="7" width="44" height="18" forecolor="#000000" uuid="9bbb544a-5c8e-4981-9b61-7198f616d034"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Segoe UI" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Pinjam]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="349" y="7" width="84" height="18" forecolor="#000000" uuid="3a77e097-2579-4727-bccb-6500a9dad417"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Segoe UI" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[tglPinjam]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="433" y="7" width="80" height="18" forecolor="#000000" uuid="5ab1c8b0-f9e4-4984-9130-8ef3f9fa16f4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Segoe UI" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[tglKmbl]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="513" y="7" width="36" height="18" forecolor="#000000" uuid="8816b0d5-0df6-4ec1-a6a3-670c6b9ed38b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Segoe UI" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Hari]]></text>
+			</staticText>
+			<line>
+				<reportElement x="2" y="6" width="551" height="1" uuid="a6632bf8-c175-453b-974d-120913cdedea"/>
+			</line>
+			<line>
+				<reportElement x="1" y="24" width="551" height="1" uuid="7814497e-e519-4297-bb79-aecb012a6642"/>
+			</line>
+			<line>
+				<reportElement x="1" y="7" width="1" height="17" uuid="d8f1836b-a027-4b54-90ca-e1302c6ce6d9"/>
+			</line>
+			<line>
+				<reportElement x="552" y="6" width="1" height="17" uuid="0578d2cd-968d-4d17-816e-2c95b436d126"/>
+			</line>
+			<line>
+				<reportElement x="513" y="7" width="1" height="17" uuid="cf9c2f2a-f40b-49a6-bc34-448a3bf695d8"/>
+			</line>
+			<line>
+				<reportElement x="432" y="7" width="1" height="17" uuid="fb06c66d-d69a-40f9-8354-7f8fcc9691e2"/>
+			</line>
+			<line>
+				<reportElement x="351" y="8" width="1" height="17" uuid="acaf9353-bc4d-48fe-ba92-700d6de05d88"/>
+			</line>
+			<line>
+				<reportElement x="305" y="8" width="1" height="17" uuid="463d78c3-0f6d-4a68-b720-b1fd91b6c36d"/>
+			</line>
+			<line>
+				<reportElement x="245" y="6" width="1" height="17" uuid="b3116334-29a6-4a83-b009-2269acefbc56"/>
+			</line>
+			<line>
+				<reportElement x="146" y="8" width="1" height="17" uuid="ea937924-7ee5-48c0-a3b7-445e11ed6451"/>
+			</line>
+			<line>
+				<reportElement x="95" y="6" width="1" height="17" uuid="dab5e585-a5f7-4716-b43f-32df46ab2987"/>
+			</line>
+			<line>
+				<reportElement x="44" y="7" width="1" height="17" uuid="f22cb746-ea68-4e6f-87b1-ff7108932ad0"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="18" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="555" height="18" uuid="04524466-7734-4709-9580-459ca4899275"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="0" y="0" width="45" height="18" uuid="339fdd6d-9506-449d-902e-518154ebaa6c"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Segoe UI" size="13"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{no}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="45" y="0" width="51" height="18" uuid="b4dccd22-8f2b-4984-a481-5065ddb4b86b"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Segoe UI" size="13"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{no_buku}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="96" y="0" width="51" height="18" uuid="8663e888-f2a0-48b3-9177-dfef0a03f884"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Segoe UI" size="13"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{id_user}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="147" y="0" width="97" height="18" uuid="013d670f-7c39-4e68-9556-4ebf6ae99f9c"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Segoe UI" size="13"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{nama}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="244" y="0" width="61" height="18" uuid="1271619a-eac2-4cf3-8506-c0ead4b4571a"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Segoe UI" size="13"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{buku}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="305" y="0" width="44" height="18" uuid="3876bc70-42bb-4fa1-bbb4-21f677024bd5"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Segoe UI" size="13"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{jmlhBuku}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="349" y="0" width="84" height="18" uuid="3b53d521-d2f2-4504-a334-5c3d1ca1b038"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Segoe UI" size="13"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tglPinjam}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="433" y="0" width="80" height="18" uuid="eb823f3e-5b81-4ff9-b8cd-e12825e04794"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Segoe UI" size="13"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tglKmbl}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="513" y="0" width="36" height="18" uuid="e72dd292-de24-4779-9044-b564aa609005"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Segoe UI" size="13"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{totalHari}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<line>
+				<reportElement x="1" y="0" width="1" height="18" uuid="588d470b-e125-4514-bb50-ed44071a2b56"/>
+			</line>
+			<line>
+				<reportElement x="552" y="0" width="1" height="18" uuid="d3047337-8015-46df-be0f-89c6761afd85"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="7" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="7de38f55-5cd0-402d-b796-a000eaf0081b"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="1" width="555" height="24" forecolor="#D0B48E" backcolor="#00CCCC" uuid="c031257c-b93a-436c-b820-cbd73222d1e4"/>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="513" y="0" width="40" height="20" forecolor="#FFFFFF" uuid="dcfdb9e7-c783-49d0-92c9-d89e465a05c6"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Segoe UI" size="11" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Column header" x="433" y="0" width="80" height="20" forecolor="#FFFFFF" uuid="e8d73b40-e0c7-4d8b-a330-8b1d53ee3948"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Segoe UI" size="11" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement style="Column header" x="2" y="1" width="197" height="20" forecolor="#FFFFFF" uuid="475019d3-a42a-4414-850b-0b27ac9a637c"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Segoe UI" size="11" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
